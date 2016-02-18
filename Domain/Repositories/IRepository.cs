@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CJSoftware.Domain.Repositories
 {
@@ -42,6 +43,13 @@ namespace CJSoftware.Domain.Repositories
 		/// <param name="includes">An optional collection of known entity information to be included.</param>
 		/// <returns>A collection of all instances of the entity.</returns>
 		IEnumerable<TEntity> GetAll(params string[] includes);
+
+		/// <summary>
+		///     Retrieves a queryable connection to the instances of the known entity.
+		/// </summary>
+		/// <param name="includes">An optional collection of known entity information to be included.</param>
+		/// <returns>A queryable connection to all instances of the entity.</returns>
+		IQueryable<TEntity> Query(params string[] includes);
 
 		/// <summary>
 		///     Retrieves an instance of the known entity with a matching unique identifier value.

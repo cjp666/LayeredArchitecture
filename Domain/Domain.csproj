@@ -45,6 +45,7 @@
     <Compile Include="Model\DomainObject.cs" />
     <Compile Include="Model\IDomainObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ICompanyRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
