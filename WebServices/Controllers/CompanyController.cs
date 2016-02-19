@@ -1,16 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using CJSoftware.Domain.Model;
+using CJSoftware.Application.CompanyServices;
+using CJSoftware.Application.DataTransfer;
 
 namespace CJSoftware.WebServices.Controllers
 {
 	public class CompanyController : ApiController
 	{
-		[HttpGet]
-		public IEnumerable<Company> Get()
+		private readonly ICompanyApplicationService _companyApplicationService;
+
+		public CompanyController(ICompanyApplicationService companyApplicationService)
 		{
-			throw new NotImplementedException();			
+			_companyApplicationService = companyApplicationService;
+		}
+
+		[HttpGet]
+		public IEnumerable<CompanyDTO> Get()
+		{
+			var results = _companyApplicationService.GetAll();
+
+			return results;
 		}
 	}
 }

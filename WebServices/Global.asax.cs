@@ -16,8 +16,8 @@ namespace CJSoftware.WebServices
 {
 	public class WebApiApplication : HttpApplication
 	{
-		private static readonly Type ModuleAssemblyAttributeType = typeof(ModuleAssemblyAttribute);
-		private static readonly Type AutofacModuleType = typeof(IModule);
+		private static readonly Type ModuleAssemblyAttributeType = typeof (ModuleAssemblyAttribute);
+		private static readonly Type AutofacModuleType = typeof (IModule);
 
 		protected void Application_Start()
 		{
@@ -26,7 +26,8 @@ namespace CJSoftware.WebServices
 			AreaRegistration.RegisterAllAreas();
 
 			GlobalConfiguration.Configure(WebApiConfig.Register);
-			GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+			GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+				new CamelCasePropertyNamesContractResolver();
 
 			// Add the compression handler
 			// http://www.codeproject.com/Articles/557232/Implementing-Custom-DelegatingHandler-in-ASP-NET-W
@@ -39,8 +40,8 @@ namespace CJSoftware.WebServices
 			Kernel.Start(GetModuleAssemblies());
 
 			// Register all controllers from this assembly and API controllers from the Distributed Services
-			IoCFactory.Builder.RegisterControllers(typeof(WebApiApplication).Assembly);
-			// IoCFactory.Builder.RegisterApiControllers(typeof(DistributedServicesModule).Assembly);
+			IoCFactory.Builder.RegisterControllers(typeof (WebApiApplication).Assembly);
+			IoCFactory.Builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
 			// Finally build the container through the kernel
 			Kernel.BuildContainer();
@@ -70,7 +71,8 @@ namespace CJSoftware.WebServices
 
 			foreach (var assembly in assemblies)
 			{
-				var moduleAssemblyAttributes = (ModuleAssemblyAttribute[])assembly.GetCustomAttributes(ModuleAssemblyAttributeType, inherit: false);
+				var moduleAssemblyAttributes =
+					(ModuleAssemblyAttribute[]) assembly.GetCustomAttributes(ModuleAssemblyAttributeType, false);
 
 				if (moduleAssemblyAttributes.Length == 0)
 				{
@@ -84,12 +86,12 @@ namespace CJSoftware.WebServices
 
 			// Instantiate all of the collected modules
 			var moduleInstances = new IModule[moduleTypes.Count];
-			for (int i = 0; i < moduleTypes.Count; i++)
+			for (var i = 0; i < moduleTypes.Count; i++)
 			{
-				moduleInstances[i] = (IModule)Activator.CreateInstance(moduleTypes[i]);
+				moduleInstances[i] = (IModule) Activator.CreateInstance(moduleTypes[i]);
 			}
 
 			return moduleInstances;
 		}
-}
+	}
 }
