@@ -23,3 +23,6 @@ This is where the domain model lives that is mapped to the actual database by th
 
 
 ## Web Services
+Sets up the DI
+
+Holds the WebAPI which is just a very thin facade to the application layer
