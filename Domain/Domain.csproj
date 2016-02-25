@@ -48,8 +48,12 @@
     <Compile Include="DomainModule.cs" />
     <Compile Include="ITransactionScope.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Model\Company.cs" />
-    <Compile Include="Model\DomainObject.cs" />
+    <Compile Include="Model\Company.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\DomainObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Model\IDomainObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ICompanyRepository.cs" />
