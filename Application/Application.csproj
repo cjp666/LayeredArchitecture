@@ -52,6 +52,9 @@
     <Compile Include="Core\ISystemClock.cs" />
     <Compile Include="Core\SystemClock.cs" />
     <Compile Include="DataTransfer\CompanyDTO.cs" />
+    <Compile Include="DataTransfer\PeopleDTO.cs" />
+    <Compile Include="PeopleServices\IPeopleApplicationService.cs" />
+    <Compile Include="PeopleServices\PeopleApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
