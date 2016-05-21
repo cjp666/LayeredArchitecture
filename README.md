@@ -1,6 +1,6 @@
 # Layered Architecture
 
-### Notes are all currently in rough form, application is fully working
+### Notes are all currently in rough form, application is working but is work in progress
 
 Reference architecture similar to what we use in work and a base for future projects
 
