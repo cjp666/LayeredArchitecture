@@ -23,6 +23,6 @@ This is where the domain model lives that is mapped to the actual database by th
 This is where the application logic and data transfer object reside.  The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightwight objects can be used
 
 ## Web Services
-Sets up the DI
+Sets up the DI (using Autofac)
 
 Holds the WebAPI which is just a very thin facade to the application layer
