@@ -11,7 +11,7 @@ The application is currently hosted in IIS but could easily be hosted in OWIN.  
 # The Layers
 ## Infrastructure
 
-This is the actual database access, using Entity Framework as ORM.  This is also where the concreate implementations for the repositories reside
+This is the actual database access, using Entity Framework as ORM.  This is also where the concrete implementations for the repositories reside
 
 Should you decide on a different ORM or database system then this is the layer to be swapped out
 
@@ -20,7 +20,7 @@ Should you decide on a different ORM or database system then this is the layer t
 This is where the domain model lives that is mapped to the actual database by the infrastructure layer.  The interfaces for the repositories are held in this layer
 
 ## Application
-This is where the application logic and data transfer object reside.  The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightwight objects can be used
+This is where the application logic and data transfer object reside.  The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightweight objects are trnasferred over the wire
 
 ## Web Services
 Sets up the DI (using Autofac)
