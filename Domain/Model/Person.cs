@@ -3,7 +3,7 @@
     /// <summary>
     ///     Not sure if this should have been called "Person"
     /// </summary>
-    public class People : DomainObject<int>
+    public class Person : DomainObject<int>
     {
         public string EmployeeReference { get; set; }
 

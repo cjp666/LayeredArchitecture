@@ -2,7 +2,7 @@
 
 namespace CJSoftware.Domain.Repositories
 {
-    public interface IPeopleRepository : IRepository<int, People>
+    public interface IPeopleRepository : IRepository<int, Person>
     {
     }
 }

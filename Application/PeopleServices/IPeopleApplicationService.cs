@@ -5,6 +5,6 @@ namespace CJSoftware.Application.PeopleServices
 {
     public interface IPeopleApplicationService
     {
-        IEnumerable<PeopleDTO> GetAll();
+        IEnumerable<PersonDTO> GetAll();
     }
 }

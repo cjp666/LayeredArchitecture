@@ -4,11 +4,11 @@ using System;
 
 namespace CJSoftware.Application.Translators
 {
-    public class PersonTranslator : IPersonTranslator, ITranslator<People, PeopleDTO>
+    public class PersonTranslator : IPersonTranslator, ITranslator<Person, PersonDTO>
     {
-        public PeopleDTO Translate(People person)
+        public PersonDTO Translate(Person person)
         {
-            var dto = new PeopleDTO
+            var dto = new PersonDTO
             {
                 Id = person.Id,
                 EmployeeReference = person.EmployeeReference,
