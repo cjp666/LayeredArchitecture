@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisposableObject.cs" />
+    <Compile Include="Enumerations\AddressLocation.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="IoC\IoCFactory.cs" />
     <Compile Include="IoC\Kernel.cs" />

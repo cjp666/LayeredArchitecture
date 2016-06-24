@@ -53,9 +53,15 @@
     <Compile Include="Core\SystemClock.cs" />
     <Compile Include="DataTransfer\CompanyDTO.cs" />
     <Compile Include="DataTransfer\PeopleDTO.cs" />
+    <Compile Include="DataTransfer\PersonAddressDTO.cs" />
     <Compile Include="PeopleServices\IPeopleApplicationService.cs" />
     <Compile Include="PeopleServices\PeopleApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translators\IPersonAddressTranslator.cs" />
+    <Compile Include="Translators\IPersonTranslator.cs" />
+    <Compile Include="Translators\ITranslator.cs" />
+    <Compile Include="Translators\PersonAddressTranslator.cs" />
+    <Compile Include="Translators\PersonTranslator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

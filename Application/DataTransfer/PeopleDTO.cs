@@ -1,4 +1,6 @@
-﻿namespace CJSoftware.Application.DataTransfer
+﻿using System.Collections.Generic;
+
+namespace CJSoftware.Application.DataTransfer
 {
     public class PeopleDTO
     {
@@ -8,6 +10,8 @@
 
         public string Name { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
+
+        public List<PersonAddressDTO> Addresses { get; set; } = new List<PersonAddressDTO>();
     }
 }

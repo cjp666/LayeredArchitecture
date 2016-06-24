@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Autofac;
 using CJSoftware.Application.Core;
+using CJSoftware.Application.Translators;
 
 namespace CJSoftware.Application
 {
@@ -25,7 +26,12 @@ namespace CJSoftware.Application
 				.AsImplementedInterfaces()
 				.InstancePerLifetimeScope();
 
-			builder.RegisterAssemblyTypes(assembly)
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(t => !t.IsAbstract && t.IsAssignableTo<ITranslator>())
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(assembly)
 				.Where(t => !t.IsAbstract && t.IsAssignableTo<ISystemClock>())
 				.AsImplementedInterfaces()
 				.InstancePerLifetimeScope();
