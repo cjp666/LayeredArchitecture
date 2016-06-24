@@ -11,6 +11,7 @@ namespace CJSoftware.Application.Translators
             {
                 Id = address.Id,
                 PersonId = address.PersonId,
+                Location = address.Location,
                 Line1 = address.Line1,
                 Line2 = address.Line2,
                 Town = address.Town,

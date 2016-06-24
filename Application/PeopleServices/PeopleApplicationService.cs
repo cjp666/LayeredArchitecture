@@ -3,6 +3,7 @@ using CJSoftware.Application.DataTransfer;
 using CJSoftware.Domain;
 using CJSoftware.Domain.Repositories;
 using CJSoftware.Application.Translators;
+using System.Linq;
 
 namespace CJSoftware.Application.PeopleServices
 {
@@ -45,7 +46,7 @@ namespace CJSoftware.Application.PeopleServices
                 results.Add(personDTO);
             }
 
-            return results;
+            return results.AsEnumerable();
         }
     }
 }

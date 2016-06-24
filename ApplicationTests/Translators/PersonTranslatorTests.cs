@@ -26,6 +26,8 @@ namespace ApplicationTests.Translators
             Assert.AreEqual("ABC987", result.EmployeeReference);
             Assert.AreEqual("A Test Person", result.Name);
             Assert.IsTrue(result.IsActive);
+            Assert.IsNotNull(result.Addresses);
+            Assert.AreEqual(0, result.Addresses.Count);
         }
 
         [TestMethod]

@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="PeopleServices\PeopleApplicationServiceTests.cs" />
+    <Compile Include="Translators\CompanyTranslatorTests.cs" />
     <Compile Include="Translators\PersonAddressTranslatorTests.cs" />
     <Compile Include="Translators\PersonTranslatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,5 @@
 ﻿using CJSoftware.Application.DataTransfer;
 using CJSoftware.Domain.Model;
-using System;
 
 namespace CJSoftware.Application.Translators
 {

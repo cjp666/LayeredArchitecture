@@ -3,35 +3,34 @@ using System.Collections.Generic;
 using CJSoftware.Application.DataTransfer;
 using CJSoftware.Domain;
 using CJSoftware.Domain.Repositories;
+using CJSoftware.Application.Translators;
 
 namespace CJSoftware.Application.CompanyServices
 {
 	public class CompanyApplicationService : ApplicationService, ICompanyApplicationService
 	{
 		private readonly ICompanyRepository _companyRepository;
+        private readonly ICompanyTranslator _companyTranslator;
 
-		public CompanyApplicationService(IUnitOfWork unitOfWork, ICompanyRepository companyRepository)
+		public CompanyApplicationService(IUnitOfWork unitOfWork, 
+            ICompanyRepository companyRepository,
+            ICompanyTranslator companyTranslator)
 			: base(unitOfWork)
 		{
 			_companyRepository = companyRepository;
-		}
+            _companyTranslator = companyTranslator;
+        }
 
 		public IEnumerable<CompanyDTO> GetAll()
 		{
 			var companies = _companyRepository.GetAll();
 
-			// TODO some form of translator DO to DTO
 			var results = new List<CompanyDTO>();
 
 			foreach (var company in companies)
 			{
-				results.Add(new CompanyDTO
-				{
-					Id = company.Id,
-					Code = company.Code,
-					Name = company.Name,
-					EmailAddress = company.EmailAddress
-				});
+                var dto = _companyTranslator.Translate(company);
+				results.Add(dto);
 			}
 
 			return results;

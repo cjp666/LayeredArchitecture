@@ -21,5 +21,10 @@ namespace CJSoftware.Application.DataTransfer
         public string Postcode { get; set; }
 
         public string Telephone { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id} - {PersonId} - {Line1}";
+        }
     }
 }

@@ -12,6 +12,11 @@ namespace CJSoftware.Application.DataTransfer
 
         public bool IsActive { get; set; } = true;
 
-        public List<PersonAddressDTO> Addresses { get; set; } = new List<PersonAddressDTO>();
+        public List<PersonAddressDTO> Addresses { get; } = new List<PersonAddressDTO>();
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", Id, Name);
+        }
     }
 }
