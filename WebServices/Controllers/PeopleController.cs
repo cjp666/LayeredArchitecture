@@ -18,7 +18,7 @@ namespace CJSoftware.WebServices.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<PeopleDTO> GetAll()
+        public IEnumerable<PersonDTO> GetAll()
         {
             var people = _peopleApplicationService.GetAll();
 

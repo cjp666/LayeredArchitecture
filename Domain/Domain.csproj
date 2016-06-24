@@ -55,7 +55,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\IDomainObject.cs" />
-    <Compile Include="Model\People.cs" />
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Model\PersonsAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ICompanyRepository.cs" />
