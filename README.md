@@ -21,6 +21,7 @@ This is where the domain model lives that is mapped to the actual database by th
 
 ## Application
 This is where the application logic and data transfer object reside
+
 The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightweight objects are transferred over the wire
 
 ## Web Services
