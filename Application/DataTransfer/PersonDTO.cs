@@ -2,7 +2,7 @@
 
 namespace CJSoftware.Application.DataTransfer
 {
-    public class PeopleDTO
+    public class PersonDTO
     {
         public int Id { get; set; }
 

@@ -26,11 +26,11 @@ namespace CJSoftware.Application.PeopleServices
             _personAddressTranslator = personAddressTranslator;
         }
 
-        public IEnumerable<PeopleDTO> GetAll()
+        public IEnumerable<PersonDTO> GetAll()
         {
             var people = _peopleRepository.GetAll();
 
-            var results = new List<PeopleDTO>();
+            var results = new List<PersonDTO>();
             foreach(var person in people)
             {
                 var personDTO = _personTranslator.Translate(person);

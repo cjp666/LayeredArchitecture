@@ -3,7 +3,7 @@ using CJSoftware.Domain.Model;
 
 namespace CJSoftware.Application.Translators
 {
-    public interface IPersonTranslator : ITranslator, ITranslator<People, PeopleDTO>
+    public interface IPersonTranslator : ITranslator, ITranslator<Person, PersonDTO>
     {
     }
 }

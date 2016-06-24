@@ -10,7 +10,7 @@ namespace ApplicationTests.Translators
         [TestMethod]
         public void Translator_ActivePerson_CorrectDTO()
         {
-            var person = new People
+            var person = new Person
             {
                 Id = 1233,
                 EmployeeReference = "ABC987",
@@ -33,7 +33,7 @@ namespace ApplicationTests.Translators
         [TestMethod]
         public void Translator_InactivePerson_CorrectDTO()
         {
-            var person = new People
+            var person = new Person
             {
                 Id = 9876,
                 EmployeeReference = "XYZ655",

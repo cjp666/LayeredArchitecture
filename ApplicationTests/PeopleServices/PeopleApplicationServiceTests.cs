@@ -23,10 +23,10 @@ namespace ApplicationTests.PeopleServices
             var personTranslator = new Mock<IPersonTranslator>();
             var personAddressTranslator = new Mock<IPersonAddressTranslator>();
 
-            var person = new People { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
+            var person = new Person { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
 
             peopleRepository.Setup(r => r.GetAll())
-                .Returns(new List<People> { person }.AsEnumerable);
+                .Returns(new List<Person> { person }.AsEnumerable);
 
             var service = new PeopleApplicationService(unitOfWork.Object,
                 peopleRepository.Object,
@@ -53,10 +53,10 @@ namespace ApplicationTests.PeopleServices
             var personTranslator = new Mock<IPersonTranslator>();
             var personAddressTranslator = new Mock<IPersonAddressTranslator>();
 
-            var person = new People { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
+            var person = new Person { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
 
             peopleRepository.Setup(r => r.GetAll())
-                .Returns(new List<People> { person }.AsEnumerable);
+                .Returns(new List<Person> { person }.AsEnumerable);
 
             var address1 = new PersonsAddress { Id = 9123, PersonId = 4321 };
             var address2 = new PersonsAddress { Id = 9543, PersonId = 4321 };
@@ -64,7 +64,7 @@ namespace ApplicationTests.PeopleServices
                 .Returns(new List<PersonsAddress> { address1, address2 });
 
             personTranslator.Setup(t => t.Translate(person))
-                .Returns(new PeopleDTO());
+                .Returns(new PersonDTO());
 
             var service = new PeopleApplicationService(unitOfWork.Object,
                 peopleRepository.Object,
@@ -91,11 +91,11 @@ namespace ApplicationTests.PeopleServices
             var personTranslator = new Mock<IPersonTranslator>();
             var personAddressTranslator = new Mock<IPersonAddressTranslator>();
 
-            var person1 = new People { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
-            var person2 = new People { Id = 4875, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
+            var person1 = new Person { Id = 4321, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
+            var person2 = new Person { Id = 4875, EmployeeReference = "ABC123", Name = "Bob", IsActive = true };
 
             peopleRepository.Setup(r => r.GetAll())
-                .Returns(new List<People> { person1, person2 }.AsEnumerable);
+                .Returns(new List<Person> { person1, person2 }.AsEnumerable);
 
             var person1Address = new PersonsAddress { Id = 9123, PersonId = 4321 };
             var person2Address = new PersonsAddress { Id = 9543, PersonId = 4321 };
@@ -104,8 +104,8 @@ namespace ApplicationTests.PeopleServices
             peopleAddressRepository.Setup(r => r.GetAllForPerson(4875))
                 .Returns(new List<PersonsAddress> { person2Address });
 
-            personTranslator.Setup(t => t.Translate(It.IsAny<People>()))
-                .Returns(new PeopleDTO());
+            personTranslator.Setup(t => t.Translate(It.IsAny<Person>()))
+                .Returns(new PersonDTO());
 
             var service = new PeopleApplicationService(unitOfWork.Object,
                 peopleRepository.Object,
@@ -121,7 +121,7 @@ namespace ApplicationTests.PeopleServices
             peopleAddressRepository.Verify(r => r.GetAllForPerson(It.IsAny<int>()), Times.Exactly(2));
             peopleAddressRepository.Verify(r => r.GetAllForPerson(4321), Times.Once);
             peopleAddressRepository.Verify(r => r.GetAllForPerson(4875), Times.Once);
-            personTranslator.Verify(t => t.Translate(It.IsAny<People>()), Times.Exactly(2));
+            personTranslator.Verify(t => t.Translate(It.IsAny<Person>()), Times.Exactly(2));
             personAddressTranslator.Verify(t => t.Translate(It.IsAny<PersonsAddress>()), Times.Exactly(2));
         }
     }

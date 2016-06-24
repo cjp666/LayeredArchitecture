@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CJSoftware.Infrastructure.DatabaseMapping
 {
-    public class PeopleDbMap : DomainObjectDbMap<int, People>
+    public class PeopleDbMap : DomainObjectDbMap<int, Person>
     {
         public PeopleDbMap()
             : base("People")

@@ -52,7 +52,7 @@
     <Compile Include="Core\ISystemClock.cs" />
     <Compile Include="Core\SystemClock.cs" />
     <Compile Include="DataTransfer\CompanyDTO.cs" />
-    <Compile Include="DataTransfer\PeopleDTO.cs" />
+    <Compile Include="DataTransfer\PersonDTO.cs" />
     <Compile Include="DataTransfer\PersonAddressDTO.cs" />
     <Compile Include="PeopleServices\IPeopleApplicationService.cs" />
     <Compile Include="PeopleServices\PeopleApplicationService.cs" />
