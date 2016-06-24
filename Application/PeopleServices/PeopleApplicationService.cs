@@ -2,17 +2,27 @@
 using CJSoftware.Application.DataTransfer;
 using CJSoftware.Domain;
 using CJSoftware.Domain.Repositories;
+using CJSoftware.Application.Translators;
 
 namespace CJSoftware.Application.PeopleServices
 {
     public class PeopleApplicationService : ApplicationService, IPeopleApplicationService
     {
         private readonly IPeopleRepository _peopleRepository;
+        private readonly IPeopleAddressesRepository _peopleAddressesRepository;
+        private readonly IPersonTranslator _personTranslator;
+        private readonly IPersonAddressTranslator _personAddressTranslator;
 
-        public PeopleApplicationService(IUnitOfWork unitOfWork, IPeopleRepository peopleRepository)
+        public PeopleApplicationService(IUnitOfWork unitOfWork, IPeopleRepository peopleRepository,
+            IPeopleAddressesRepository peopleAddressesRepository,
+            IPersonTranslator personTranslator,
+            IPersonAddressTranslator personAddressTranslator)
             : base(unitOfWork)
         {
             _peopleRepository = peopleRepository;
+            _peopleAddressesRepository = peopleAddressesRepository;
+            _personTranslator = personTranslator;
+            _personAddressTranslator = personAddressTranslator;
         }
 
         public IEnumerable<PeopleDTO> GetAll()
@@ -22,13 +32,17 @@ namespace CJSoftware.Application.PeopleServices
             var results = new List<PeopleDTO>();
             foreach(var person in people)
             {
-                results.Add(new PeopleDTO
+                var personDTO = _personTranslator.Translate(person);
+
+                var addresses = _peopleAddressesRepository.GetAllForPerson(person.Id);
+
+                foreach(var address in addresses)
                 {
-                    Id = person.Id,
-                    EmployeeReference = person.EmployeeReference,
-                    Name = person.Name,
-                    IsActive = person.IsActive
-                });
+                    var addressDTO = _personAddressTranslator.Translate(address);
+                    personDTO.Addresses.Add(addressDTO);
+                }
+
+                results.Add(personDTO);
             }
 
             return results;
