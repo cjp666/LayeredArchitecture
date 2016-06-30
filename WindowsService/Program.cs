@@ -3,6 +3,7 @@ using log4net.Config;
 using Microsoft.Owin.Hosting;
 using System;
 using System.Configuration;
+using System.ServiceProcess;
 
 namespace WindowsService
 {
@@ -22,13 +23,12 @@ namespace WindowsService
             }
             else
             {
-                //var servicesToRun = new ServiceBase[]
-                //{
-                //    new WTPAPIService()
-                //};
-                //ServiceBase.Run(servicesToRun);
+                var servicesToRun = new ServiceBase[]
+                {
+                    new ExampleService()
+                };
+                ServiceBase.Run(servicesToRun);
             }
-
         }
 
         private static void AsConsoleApplication()
