@@ -15,7 +15,7 @@ There is a userAppSettings.config file that controls how the service runs
 </appSettings>
 ```
 
-port = the port you want to listen on
-useHTTPS = true to listen using *https* rather than *http*
-useLocalhost = true to listen on *localhost* rather than the machines IP address
-asConsole = run as a console application rather than a Windows Service, easier for debugging
+* port = the port you want to listen on
+* useHTTPS = true to listen using *https* rather than *http*
+* useLocalhost = true to listen on *localhost* rather than the machines IP address
+* asConsole = run as a console application rather than a Windows Service, easier for debugging
