@@ -38,6 +38,8 @@
             // 
             // serviceInstaller1
             // 
+            this.serviceInstaller1.Description = "Example Windows Service hosting a WebAPI";
+            this.serviceInstaller1.DisplayName = "Example Windows Service";
             this.serviceInstaller1.ServiceName = "ExampleService";
             // 
             // ProjectInstaller

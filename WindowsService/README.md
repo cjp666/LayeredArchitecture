@@ -1,4 +1,4 @@
-﻿## WindowsService
+﻿## The Windows Service
 
 The Windows Service hosts the WebAPI using OWIN
 
@@ -19,3 +19,16 @@ There is a userAppSettings.config file that controls how the service runs
 * useHTTPS = true to listen using *https* rather than *http*
 * useLocalhost = true to listen on *localhost* rather than the machines IP address
 * asConsole = run as a console application rather than a Windows Service, easier for debugging
+
+### Installation
+This is performed using the .NET [installutil](https://msdn.microsoft.com/en-us/library/50614e95.aspx)
+
+#### Install
+```
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil /username=domain\username /password=password /unattended ExampleService.exe 
+```
+
+#### Uninstall
+```
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil /u ExampleService.exe 
+```
