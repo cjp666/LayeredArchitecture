@@ -6,7 +6,7 @@ Reference architecture similar to what we use in work and a base for future proj
 
 You will need the "simple" database and the script to create this is in the OtherBits folder, the applications connection string is held in the userConnectionStrings.config file
 
-The application is currently hosted in IIS but could easily be hosted in OWIN.  When runs it shows a HTML page that just says "Move along..." but the WebAPI is accessible along the lines of /api/company, this will return a list of all the companies in the “simple” database it uses
+The application is currently hosted in IIS but could easily be hosted in OWIN.  When runs it shows a HTML page that with a list of links to run the various 'get' api methods
 
 # The Layers
 ## Infrastructure
@@ -22,7 +22,7 @@ This is where the domain model lives that is mapped to the actual database by th
 ## Application
 This is where the application logic and data transfer object reside
 
-The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightweight objects are transferred over the wire
+The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightweight objects can / are transferred over the wire
 
 ## Web Services
 Sets up the DI (using Autofac)
