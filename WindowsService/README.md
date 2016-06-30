@@ -21,7 +21,7 @@ There is a userAppSettings.config file that controls how the service runs
 * asConsole = run as a console application rather than a Windows Service, easier for debugging
 
 ### Installation
-This is performed using the .NET [installutil](https://msdn.microsoft.com/en-us/library/50614e95.aspx)
+This is performed using the .NET [installutil](https://msdn.microsoft.com/en-us/library/50614e95.aspx "Microsoft.NET InstallUtil" target="_blank")
 
 #### Install
 ```
