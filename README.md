@@ -8,6 +8,8 @@ You will need the "simple" database and the script to create this is in the Othe
 
 The application is currently hosted in IIS but could easily be hosted in OWIN.  When runs it shows a HTML page that with a list of links to run the various 'get' api methods
 
+![](./architecture diagram.png)
+
 # The Layers
 ## Infrastructure
 
