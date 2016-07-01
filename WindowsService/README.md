@@ -1,6 +1,6 @@
 ﻿## The Windows Service
 
-The Windows Service hosts the WebAPI using OWIN
+The [Windows Service](https://msdn.microsoft.com/en-us/library/zt39148a.aspx) hosts the WebAPI using OWIN
 
 /api/ping - should return pong
 
