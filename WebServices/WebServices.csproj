@@ -130,7 +130,6 @@
   <ItemGroup>
     <Compile Include="ApplicationModule.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="CompressionDelegateHandler.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
