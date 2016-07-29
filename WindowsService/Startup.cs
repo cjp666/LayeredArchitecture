@@ -1,6 +1,7 @@
 ﻿using Autofac.Core;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using CJSoftware.CrossCutting;
 using CJSoftware.CrossCutting.IoC;
 using Owin;
 using System;
