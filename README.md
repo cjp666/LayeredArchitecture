@@ -27,6 +27,13 @@ This is where the application logic and data transfer object reside
 The architecture uses DTO's for transfering data to the client rather than the entities themselves so that more lightweight objects can / are transferred over the wire
 
 ## Web Services
+Hosted in IIS
 Sets up the DI (using Autofac)
 
 Holds the WebAPI which is just a very thin facade to the application layer
+
+## WindowsService
+A Windows Service that hosts the WebAPI using OWIN
+
+The WebAPI is just a very thin facade to the application layer
+
