@@ -11,6 +11,7 @@ using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using CJSoftware.CrossCutting.IoC;
 using Newtonsoft.Json.Serialization;
+using CJSoftware.CrossCutting;
 
 namespace CJSoftware.WebServices
 {

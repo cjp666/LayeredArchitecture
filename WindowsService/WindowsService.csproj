@@ -137,7 +137,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompressionDelegateHandler.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\PingController.cs" />

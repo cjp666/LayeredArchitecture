@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WindowsService
+namespace CJSoftware.CrossCutting
 {
     public class CompressionDelegateHandler : DelegatingHandler
     {

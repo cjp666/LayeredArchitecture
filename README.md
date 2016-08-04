@@ -6,7 +6,9 @@ Reference architecture similar to what we use in work and a base for future proj
 
 You will need the "simple" database and the script to create this is in the OtherBits folder, the applications connection string is held in the userConnectionStrings.config file
 
-The application is currently hosted in IIS but could easily be hosted in OWIN.  When runs it shows a HTML page that with a list of links to run the various 'get' api methods
+The application is either hosted in IIS or hosted in OWIN via a Windows Service.  
+
+The IIS version, when ran, shows a HTML page with a list of links to run the various 'get' api methods
 
 ![](./architecture diagram.png)
 
@@ -37,3 +39,4 @@ A Windows Service that hosts the WebAPI using OWIN
 
 The WebAPI is just a very thin facade to the application layer
 
+This can be ran either as a console application or a Windows Service (see the readme for the WindowsService)

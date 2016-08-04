@@ -32,3 +32,9 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil /username=domain\usern
 ```
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil /u ExampleService.exe 
 ```
+
+### Check it's running
+```
+api/ping
+```
+Should get back "pong"
