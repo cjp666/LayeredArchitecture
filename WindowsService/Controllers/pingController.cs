@@ -4,9 +4,9 @@ namespace WindowsService.Controllers
 {
     public class PingController : ApiController
     {
-        public string Get()
+        public IHttpActionResult Get()
         {
-            return "pong";
+            return Ok("pong");
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿using CJSoftware.Application.CompanyServices;
-using CJSoftware.Application.DataTransfer;
-using System.Collections.Generic;
 using System.Web.Http;
 
 namespace WindowsService.Controllers
 {
+    [Authorize]
     public class CompanyController : ApiController
     {
         private readonly ICompanyApplicationService _companyApplicationService;
@@ -15,11 +14,11 @@ namespace WindowsService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CompanyDTO> Get()
+        public IHttpActionResult Get()
         {
             var results = _companyApplicationService.GetAll();
 
-            return results;
+            return Ok(results);
         }
     }
 }
