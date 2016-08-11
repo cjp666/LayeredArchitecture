@@ -1,0 +1,36 @@
+{
+  "name": "webapp",
+  "version": "0.0.1",
+  "description": "Example WebApp that accesses the Example Windows Service WebAPI",
+  "authors": [
+    "Chris Podmore"
+  ],
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjp666/LayeredArchitecture.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "jspm": "^0.16.42"
+  },
+  "jspm": {
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.1",
+      "aurelia-http-client": "npm:aurelia-http-client@^1.0.0",
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
+      "font-awesome": "npm:font-awesome@^4.6.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

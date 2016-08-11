@@ -6,6 +6,14 @@
 *.user
 *.sln.docstates
 
+# Ignore Node & Bower
+###################
+node_modules
+jspm_packages
+bower_components
+build
+.tmp
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
