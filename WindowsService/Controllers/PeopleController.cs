@@ -1,10 +1,9 @@
-﻿using CJSoftware.Application.DataTransfer;
-using CJSoftware.Application.PeopleServices;
-using System.Collections.Generic;
+﻿using CJSoftware.Application.PeopleServices;
 using System.Web.Http;
 
 namespace WindowsService.Controllers
-{ 
+{
+    [Authorize]
     public class PeopleController : ApiController
     {
         private readonly IPeopleApplicationService _peopleApplicationService;
@@ -15,11 +14,11 @@ namespace WindowsService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<PersonDTO> GetAll()
+        public IHttpActionResult GetAll()
         {
             var people = _peopleApplicationService.GetAll();
 
-            return people;
+            return Ok(people);
         }
     }
 }

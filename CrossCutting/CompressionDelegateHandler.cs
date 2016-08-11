@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace CJSoftware.CrossCutting
 {
+    /// <summary>
+    /// http://www.codeproject.com/Articles/557232/Implementing-Custom-DelegatingHandler-in-ASP-NET-W
+    /// </summary>
     public class CompressionDelegateHandler : DelegatingHandler
     {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

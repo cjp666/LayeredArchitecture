@@ -38,3 +38,6 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil /u ExampleService.exe
 api/ping
 ```
 Should get back "pong"
+
+## Security
+Security was added following this [article](http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/)

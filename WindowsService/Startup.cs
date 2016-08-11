@@ -1,8 +1,9 @@
 ﻿using Autofac.Core;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
-using CJSoftware.CrossCutting;
 using CJSoftware.CrossCutting.IoC;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
+using WindowsService.Providers;
 
 namespace WindowsService
 {
@@ -19,24 +21,41 @@ namespace WindowsService
         private readonly Type ModuleAssemblyAttributeType = typeof(ModuleAssemblyAttribute);
         private readonly Type AutofacModuleType = typeof(IModule);
 
-        public void Configuration(IAppBuilder appBuilder)
+        public void Configuration(IAppBuilder app)
         {
-            SetupDependencyInjection(appBuilder);
+            SetupDependencyInjection(app);
+
+            ConfigureOAuth(app);
+
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             var config = new HttpConfiguration();
 
-            // http://www.codeproject.com/Articles/557232/Implementing-Custom-DelegatingHandler-in-ASP-NET-W
-            // Add the compression handler
-            config.MessageHandlers.Add(new CompressionDelegateHandler());
+            // config.MessageHandlers.Add(new CompressionDelegateHandler());
 
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new { id = RouteParameter.Optional });
 
-            appBuilder.UseWebApi(config);
+            app.UseWebApi(config);
 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(IoCFactory.Container);
         }
 
-        private void SetupDependencyInjection(IAppBuilder appBuilder)
+        public void ConfigureOAuth(IAppBuilder app)
+        {
+            var OAuthServerOptions = new OAuthAuthorizationServerOptions()
+            {
+                AllowInsecureHttp = true,
+                TokenEndpointPath = new PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                Provider = new SimpleAuthorizationServerProvider()
+            };
+
+            // Token Generation
+            app.UseOAuthAuthorizationServer(OAuthServerOptions);
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+        }
+
+        private void SetupDependencyInjection(IAppBuilder app)
         {
             // Get the instances of all application modules and start up the kernel
             Kernel.Start(GetModuleAssemblies());
@@ -50,7 +69,7 @@ namespace WindowsService
 
             // Set up the ASP.NET dependency resolution to use Autofac
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoCFactory.Container));
-            appBuilder.UseAutofacMiddleware(IoCFactory.Container);
+            app.UseAutofacMiddleware(IoCFactory.Container);
         }
 
         private IModule[] GetModuleAssemblies()
