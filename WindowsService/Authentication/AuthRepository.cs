@@ -21,7 +21,7 @@ namespace WindowsService.Authentication
         {
             IdentityUser user = new IdentityUser
             {
-                UserName = userModel.UserName
+                UserName = userModel.Username
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);
@@ -29,9 +29,9 @@ namespace WindowsService.Authentication
             return result;
         }
 
-        public async Task<IdentityUser> FindUser(string userName, string password)
+        public async Task<IdentityUser> FindUser(string username, string password)
         {
-            IdentityUser user = await _userManager.FindAsync(userName, password);
+            IdentityUser user = await _userManager.FindAsync(username, password);
 
             return user;
         }
