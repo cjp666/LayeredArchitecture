@@ -5,6 +5,7 @@
   "authors": [
     "Chris Podmore"
   ],
+  "license": "MIT",
   "scripts": {
     "dev": "lite-server"
   },
