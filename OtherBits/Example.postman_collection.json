@@ -1,0 +1,115 @@
+{
+	"id": "a63e023c-7c42-d594-df47-c4df3561981e",
+	"name": "Example",
+	"description": "",
+	"order": [
+		"93bac2c1-798b-d9da-544c-a5f9a479f5b7",
+		"55d77622-21f4-29bb-d039-5bd51a053c1b",
+		"1d58b462-91e2-da3e-97b4-3fe27628dfb6"
+	],
+	"folders": [],
+	"timestamp": 1470945511834,
+	"owner": "",
+	"public": false,
+	"published": false,
+	"requests": [
+		{
+			"id": "1d58b462-91e2-da3e-97b4-3fe27628dfb6",
+			"headers": "",
+			"url": "http://localhost:9021/api/account/register",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a63e023c-7c42-d594-df47-c4df3561981e",
+			"data": [
+				{
+					"key": "username",
+					"value": "chris2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "podmore",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "confirmPassword",
+					"value": "podmore",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:9021/api/account/register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1470945523695,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "55d77622-21f4-29bb-d039-5bd51a053c1b",
+			"headers": "",
+			"url": "http://localhost:9021/token",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a63e023c-7c42-d594-df47-c4df3561981e",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "chris",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "podmore",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:9021/token",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1470945511834,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "93bac2c1-798b-d9da-544c-a5f9a479f5b7",
+			"headers": "authorization: bearer AQAAANCMnd8BFdERjHoAwE_Cl-sBAAAAow5-ssq_ekeACWR87lLIcQAAAAACAAAAAAAQZgAAAAEAACAAAAApFVF0o_20bQjUwq2BOXPRvx0QCAhC-4-qLq8C_RAvYQAAAAAOgAAAAAIAACAAAAAvGSfji3ZBA0VY0G-5rhulEMRfxYSW2zLjSKMSOfyaG4AAAAAnIfkTH7ZTBHtuT0EYQh71kfq83zD8wYeEtW2zoBoktrEzt1tLwNWn0Fs0C4mfI-6Swb1gd2sGoeYSfHb558ZoeVpWPhlVu-5tmug9ia2gdccyJEPZqHCmx9ETPQK2_3P-fiGDwNfKWKlEJz-CVauUQvR9hpsUOAFOOIXp_x_G8UAAAAB2FIgFA4lGfkan4RAKTb4U1UNsYFtOC8bxB1p1kyZbOCWU791d3UUerPDF1U33J8oBUS85DwPo_7_ZYQZStgZO\n",
+			"url": "http://localhost:9021/api/people",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a63e023c-7c42-d594-df47-c4df3561981e",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:9021/api/people",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1470945499274,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
