@@ -21,6 +21,11 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.7",
     "core-js": "npm:core-js@1.2.7",
     "font-awesome": "npm:font-awesome@4.6.3",
+    "toastr": "github:CodeSeven/toastr@2.1.3",
+    "github:CodeSeven/toastr@2.1.3": {
+      "css": "github:systemjs/plugin-css@0.1.26",
+      "jquery": "github:components/jquery@3.1.0"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
