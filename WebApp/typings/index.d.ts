@@ -7,6 +7,7 @@
 /// <reference path="modules/aurelia-event-aggregator/index.d.ts" />
 /// <reference path="modules/aurelia-framework/index.d.ts" />
 /// <reference path="modules/aurelia-history/index.d.ts" />
+/// <reference path="modules/aurelia-http-client/index.d.ts" />
 /// <reference path="modules/aurelia-loader/index.d.ts" />
 /// <reference path="modules/aurelia-logging/index.d.ts" />
 /// <reference path="modules/aurelia-metadata/index.d.ts" />

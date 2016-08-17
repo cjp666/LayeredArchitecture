@@ -1,5 +1,38 @@
 <template>
     <div class="container">
-        <h1>Hello World!</h1>
+        <h1>Layered Application, Aurelia Example calling the webAPI's</h1>
+        <div class="row" if.bind="authentication.isAuthenticated">
+            <div class="col-md-12">
+                <button class="btn btn-default btn-primary" id="logoutButton" click.delegate="performLogout()">Logout</button>
+            </div>
+        </div>
+        <div class="row" if.bind="!authentication.isAuthenticated">
+            <div class="col-md-6">
+                <div class="panel">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <input type="text" Id="loginUsername" placeholder="enter username" value.bind="loginUsername">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" Id="loginPassword" placeholder="enter password" value.bind="loginPassword">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-primary" id="loginButton" click.delegate="performLogin()">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Register</h2>
+                <div class="form-group">
+                    <input type="text" Id="registerUsername" placeholder="enter username">
+                </div>
+                <div class="form-group">
+                    <input type="password" Id="registerPassword" placeholder="enter password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default btn-success" id="registerButton" click.delegate="performRegister()">Register</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

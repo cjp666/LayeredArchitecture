@@ -25,24 +25,31 @@ gulp.task('build-ts', function () {
 });
 
 var path = {
-    sourceTS: 'views/**/*.ts',
-    sourceJS: 'views/**/*.js',
-    html: 'views/**/*.html',
+    sourceTS: './*.ts',
+    sourceJS: './*.js',
+    html: './*.html',
     style: 'styles/**/*.css'
 };
 
 gulp.task('serve', function (done) {
-    browserSync({
-        open: false,
+    // browserSync({
+    //     open: false,
+    //     port: 9000,
+    //     server: {
+    //         baseDir: ['.'],
+    //         middleware: function (req, res, next) {
+    //             res.setHeader('Access-Control-Allow-Origin', '*');
+    //             next();
+    //         }
+    //     }
+    // }, done);
+
+    browserSync.init([path.sourceJS, path.html, path.style], {
         port: 9000,
         server: {
-            baseDir: ['.'],
-            middleware: function (req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
-                next();
-            }
+            baseDir: '.'
         }
-    }, done);
+    });
 });
 
 function reportChange(event) {
@@ -51,6 +58,7 @@ function reportChange(event) {
 
 gulp.task('watch', ['serve'], function () {
     gulp.watch(path.sourceTS, [browserSync.reload]).on('change', reportChange);
+    gulp.watch(path.sourceJS, [browserSync.reload]).on('change', reportChange);
     gulp.watch(path.html, [browserSync.reload]).on('change', reportChange);
     gulp.watch(path.style, [browserSync.reload]).on('change', reportChange);
 });
