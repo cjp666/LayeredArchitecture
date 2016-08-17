@@ -1,18 +1,21 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "target": "ES5",
+        "module": "commonjs",
+        "declaration": false,
         "noImplicitAny": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "sourceMap": true,
-        "removeComments": true,
-        "experimentalDecorators": true
+        "removeComments": true
     },
     "exclude": [
         "node_modules"
     ],
     "files": [
-        "main.ts",
+        "./typings/index.d.ts",
         "app.ts",
+        "main.ts",
         "welcome.ts"
     ]
 }
